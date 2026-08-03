@@ -1,0 +1,152 @@
+generated: '2026-08-02'
+method: probed
+source: live probes of /.well-known/ and discovery paths on every Atmosphere host
+result: none
+summary: >-
+  Atmosphere publishes no /.well-known/ discovery documents on any host. Every
+  canonical path was probed on the marketing site, the API backend, the help
+  centre, the venue admin console and the advertising site; all returned 404 or
+  an HTML single-page-app shell. No security.txt, no OIDC/OAuth metadata, no
+  api-catalog, no ai-plugin.json, no agent card, no llms.txt.
+hosts:
+- host: https://www.atmosphere.tv
+  documents:
+  - path: /.well-known/security.txt          # RFC 9116
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 301
+    note: redirects to the same path with a trailing slash; no document served
+  - path: /.well-known/oauth-authorization-server   # RFC 8414
+    status: 404
+  - path: /.well-known/api-catalog            # RFC 9727
+    status: 301
+    note: redirects to the same path with a trailing slash; no document served
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json        # A2A 1.0.0
+    status: 404
+  - path: /.well-known/agent.json             # A2A pre-0.3 legacy
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /security.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+- host: https://api.atmosphere.tv
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource     # RFC 9728
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /openapi.yaml
+    status: 404
+  - path: /swagger.json
+    status: 404
+  - path: /v1/openapi.json
+    status: 404
+  - path: /api-docs
+    status: 404
+  - path: /docs
+    status: 404
+  - path: /redoc
+    status: 404
+  - path: /graphql
+    status: 404
+  - path: /mcp
+    status: 404
+  - path: /sse
+    status: 404
+  - path: /status
+    status: 200
+    note: 'health probe only: {"ping":"pong","mysql":"up","redis":"up"}'
+- host: https://help.atmosphere.tv
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://admin.atmosphere.tv
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 200
+    valid: false
+    content_type: text/html
+    note: SPA catch-all returning the Atmosphere Admin HTML shell - rejected
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    valid: false
+    content_type: text/html
+    note: SPA catch-all returning the Atmosphere Admin HTML shell - rejected
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    valid: false
+    content_type: text/html
+    note: SPA catch-all returning the Atmosphere Admin HTML shell - rejected
+  - path: /.well-known/api-catalog
+    status: 200
+    valid: false
+    content_type: text/html
+    note: SPA catch-all returning the Atmosphere Admin HTML shell - rejected
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+- host: https://advertise.atmosphere.tv
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+notes: >-
+  The four HTTP 200 responses on admin.atmosphere.tv are the dominant
+  false-positive shape for this probe: a single-page-app catch-all answers 200
+  with text/html for arbitrary /.well-known/* paths. All four bodies are the
+  identical "Atmosphere Admin" HTML document, so none is recorded as a published
+  discovery document and no AgentCard artifact was written.

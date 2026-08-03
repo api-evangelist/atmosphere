@@ -1,0 +1,81 @@
+generated: '2026-08-02'
+method: probed
+source: >-
+  Contract discovery probes across www./api./help./admin./advertise.atmosphere.tv
+  plus a search of atmosphere.tv, help.atmosphere.tv and the public web for any
+  Atmosphere developer program.
+summary: >-
+  Atmosphere operates a first-party streaming and advertising platform with no
+  public developer surface. There is no OpenAPI/Swagger, no GraphQL endpoint, no
+  hosted MCP server, no A2A agent card, no published SDKs and no partner API
+  program. api.atmosphere.tv is a live, undocumented backend for Atmosphere's own
+  apps and venue console. Standards below are asserted only where they could be
+  observed; everything unobservable is recorded as unknown rather than assumed.
+standards:
+- id: openapi
+  conforms: false
+  evidence: >-
+    /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs,
+    /docs, /redoc all return 404 on api.atmosphere.tv; www.atmosphere.tv/openapi.json
+    returns 404. No spec found on the site, help centre, or any public repository.
+- id: graphql
+  conforms: false
+  evidence: api.atmosphere.tv/graphql returns 404; no GraphQL surface documented.
+- id: asyncapi
+  conforms: false
+  evidence: No event, streaming or webhook surface is documented for third parties.
+- id: mcp
+  conforms: false
+  evidence: >-
+    api.atmosphere.tv/mcp and /sse return 404; mcp.atmosphere.tv does not resolve;
+    no Atmosphere MCP server is published in any registry.
+- id: a2a
+  conforms: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json return 404 on every
+    Atmosphere host. The four HTTP 200 /.well-known responses on
+    admin.atmosphere.tv are SPA HTML catch-alls and were rejected.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on all five Atmosphere hosts.
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: false
+  evidence: No RFC 8414 metadata document served on any host.
+- id: openid-connect
+  conforms: false
+  evidence: No /.well-known/openid-configuration document served on any host.
+- id: rfc9727-api-catalog
+  conforms: false
+  evidence: No /.well-known/api-catalog document served on any host.
+- id: llms-txt
+  conforms: false
+  evidence: /llms.txt returns 404 on www., api., help., admin. and advertise.
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: No public contract or error reference to evaluate.
+- id: tls-1-3
+  conforms: true
+  evidence: >-
+    All five probed Atmosphere hosts negotiate TLSv1.3 (see
+    security/atmosphere-domain-security.yml).
+- id: hsts
+  conforms: partial
+  evidence: >-
+    help.atmosphere.tv and advertise.atmosphere.tv send
+    Strict-Transport-Security max-age=31536000; www., api. and admin. do not.
+- id: dmarc
+  conforms: partial
+  evidence: DMARC record published on atmosphere.tv but policy is p=none (monitor only).
+- id: dnssec
+  conforms: false
+  evidence: DNSSEC not enabled on atmosphere.tv.
+- id: caa
+  conforms: false
+  evidence: No CAA records published on atmosphere.tv.
+compliance_program:
+  published: false
+  note: >-
+    No trust centre, security page, certification list (SOC 2 / ISO 27001 / PCI /
+    HIPAA), bug bounty or responsible-disclosure page was found on any Atmosphere
+    host. probe-security-programs.py returned vdp=none trust=none. No Compliance,
+    TrustCenter, Security or VulnerabilityDisclosure pointer is emitted.

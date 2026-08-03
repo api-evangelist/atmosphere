@@ -1,8 +1,24 @@
 aid: atmosphere
 name: Atmosphere
-description: 'Atmosphere is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Atmosphere (Atmosphere TV) is an Austin, Texas streaming television platform
+  built for businesses rather than households. Spun out of Chive Media Group
+  (theCHIVE) in 2019, it delivers free, ad-supported, audio-optional short-form
+  channels - CHIVE TV, Atmosphere Sports, Happy TV, Nostalgia TV and partner
+  channels - to bars, restaurants, gyms and health clubs, hotels, airports,
+  medical waiting rooms, salons, casinos and other out-of-home venues over a
+  streaming player and Android TV app. Alongside the channel lineup it sells a
+  digital-signage product for venue-owned promotions, Atmosphere Trivia for
+  in-venue engagement, a Business Manager mobile app for controlling screens,
+  and an advertising network that monetizes those venue screens as connected-TV
+  and digital-out-of-home inventory. Atmosphere raised a $65M Series D in
+  February 2023 at a $1B valuation led by Sageview Capital with Valor Equity
+  Partners and S3 Ventures. Atmosphere publishes no public developer API, SDK,
+  or machine-readable API contract; api.atmosphere.tv is an undocumented
+  first-party backend serving its own apps and venue console, and its shares
+  trade on the private secondary market.
 url: https://raw.githubusercontent.com/api-evangelist/atmosphere/refs/heads/main/apis.yml
+image: https://images.prismic.io/atmosphere-marketing/Z-rWmHdAxsiBwI2C_Landing-Primary.png?auto=format,compress
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +28,15 @@ created: '2026-08-02'
 modified: '2026-08-02'
 tags:
 - Company
+- Media
+- Streaming
+- Television
+- Advertising
+- Digital Signage
+- Out Of Home
+- Entertainment
+- Hospitality
+- Connected TV
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +45,41 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://forgeglobal.com/atmosphere_stock/
+  url: https://www.atmosphere.tv/
+- type: Support
+  url: https://help.atmosphere.tv/
+- type: GettingStarted
+  url: https://help.atmosphere.tv/getting-started
+- type: Blog
+  url: https://www.atmosphere.tv/blogs
+- type: SignUp
+  url: https://www.atmosphere.tv/signup
+- type: Login
+  url: https://admin.atmosphere.tv/
+- type: TermsOfService
+  url: https://www.atmosphere.tv/legal/terms/business
+- type: PrivacyPolicy
+  url: https://www.atmosphere.tv/legal/privacy
+- type: Press
+  url: https://www.atmosphere.tv/press
+- type: Careers
+  url: https://www.atmosphere.tv/careers
+- type: Contact
+  url: https://www.atmosphere.tv/contact
+- type: FAQ
+  url: https://www.atmosphere.tv/faq
+- type: ChangeLog
+  url: changelog/atmosphere-changelog.yml
+- type: WellKnown
+  url: well-known/atmosphere-well-known.yml
+- type: Conformance
+  url: conformance/atmosphere-conformance.yml
+- type: DomainSecurity
+  url: security/atmosphere-domain-security.yml
+- type: LLMsTxt
+  url: llms/atmosphere-llms.txt
+x-enrichment:
+  date: '2026-08-02'
+  status: enriched
+  artifacts_added: 5
+  pass: local-v1

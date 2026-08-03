@@ -1,0 +1,56 @@
+generated: '2026-08-02'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml hosts + discovered Atmosphere subdomains
+hosts:
+- host: www.atmosphere.tv
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jan 19 23:59:59 2027 GMT
+  hsts: false
+- host: api.atmosphere.tv
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jan 29 23:59:59 2027 GMT
+  hsts: false
+  note: >-
+    Undocumented first-party backend. GET / returns a bare version string
+    (10.50.2) and sets an atmosphere_api_session cookie; GET /status returns
+    {"ping":"pong","mysql":"up","redis":"up"}. Fronted by AWS API Gateway and
+    CloudFront. No public contract is published at this host.
+- host: help.atmosphere.tv
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 30 04:10:37 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: admin.atmosphere.tv
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Feb 8 23:59:59 2027 GMT
+  hsts: false
+  note: >-
+    Atmosphere Admin single-page console. Answers HTTP 200 with the SPA HTML
+    shell for several /.well-known/* paths; those are catch-all responses, not
+    published discovery documents (see well-known/atmosphere-well-known.yml).
+- host: advertise.atmosphere.tv
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 13 23:59:59 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: atmosphere.tv
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: >-
+    v=spf1 mx include:_spf.google.com include:spf.autopilothq.com
+    include:21890827.spf10.hubspotemail.net ~all
+  dmarc: true
+  dmarc_policy: none
+  dmarc_rua: dmarc@atmosphere.tv
+findings:
+- No CAA records published on atmosphere.tv.
+- DNSSEC not enabled on atmosphere.tv.
+- DMARC published but policy is p=none (monitor only, not enforcing).
+- HSTS present on help. and advertise. but absent on www., api. and admin.

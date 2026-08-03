@@ -1,0 +1,79 @@
+generated: '2026-08-02'
+method: searched
+source: https://www.atmosphere.tv/blogs
+scope: product
+summary: >-
+  Atmosphere publishes no API changelog and no API versioning scheme - it has no
+  public API. It does run a recurring, dated "What's new" product-update series
+  on its marketing blog covering channel lineup, live-event, digital-signage and
+  Trivia releases. That series is captured here as the provider's real
+  release-notes surface; every entry below is a live URL whose title was fetched.
+versioning:
+  scheme: null
+  note: >-
+    No public API version is documented. The undocumented backend at
+    api.atmosphere.tv reports an internal build string (10.50.2 as observed on
+    2026-08-02) at its root; it is not a published API version.
+feed:
+  url: https://www.atmosphere.tv/blogs
+  rss: null
+entries:
+- title: 'September 2025 Atmosphere TV Update: Seasonal Popup channels, Holiday Trivia Takeovers & More!'
+  url: https://www.atmosphere.tv/blog/dec-2025
+  period: '2025-12'
+  highlights:
+  - Seasonal popup channels
+  - Holiday Trivia takeovers
+- title: 'September 2025 Atmosphere TV Update: Halloween Streaming, Live Sports & New Features'
+  url: https://www.atmosphere.tv/blog/sep-2025
+  period: '2025-09'
+  highlights:
+  - Halloween streaming
+  - Live sports
+  - New venue features
+- title: "What's new: July 4th TV, New Live Events, & More"
+  url: https://www.atmosphere.tv/blog/june-2025
+  period: '2025-06'
+  highlights:
+  - July 4th TV
+  - New live events
+- title: "What's new: Red Bull Live Events, Daily Channel Updates, & More"
+  url: https://www.atmosphere.tv/blog/whats-new-may-2025
+  period: '2025-05'
+  highlights:
+  - Red Bull live events
+  - Daily channel updates
+- title: "What's new: Atmosphere Games, Mobile Digital Signage, & More"
+  url: https://www.atmosphere.tv/blog/whats-new-april-2025
+  period: '2025-04'
+  highlights:
+  - Atmosphere Games
+  - Mobile digital signage
+- title: "What's new: March Madness Coverage, Live Stream Events"
+  url: https://www.atmosphere.tv/blog/whats-new-march-2025
+  period: '2025-03'
+  highlights:
+  - March Madness coverage
+  - Live stream events
+- title: "What's new: Nostalgia TV, Branded Trivia, and March Madness"
+  url: https://www.atmosphere.tv/blog/whats-new-february-2025
+  period: '2025-02'
+  highlights:
+  - Nostalgia TV channel
+  - Branded Trivia
+- title: "What's new: Sports Partners, One Fight, and Trivia Loyalty"
+  url: https://www.atmosphere.tv/blog/whats-new-january-2025
+  period: '2025-01'
+  highlights:
+  - Sports partners
+  - One Fight Night
+  - Trivia loyalty
+related_announcements:
+- title: Introducing the Atmosphere Business Manager App
+  url: https://www.atmosphere.tv/blog/business-manager-app
+- title: Atmosphere Introduces Custom Playlist Feature
+  url: https://www.atmosphere.tv/blog/atmosphere-introduces-custom-playlist-feature
+x-evidence:
+  fetched: '2026-08-02'
+  method: HTTP GET of each blog URL; titles read from the served <title> element
+  http_status: 200
