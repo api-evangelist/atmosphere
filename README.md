@@ -64,29 +64,85 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Atmosphere (Atmosphere TV) is an Austin, Texas streaming television platform built for businesses rather than households. Spun out of Chive Media Group (theCHIVE) in 2019, it delivers free, ad-supported, audio-optional short-form channels to bars, restaurants, gyms and health clubs, hotels, airports, medical waiting rooms, salons and casinos, alongside a digital-signage product, Atmosphere Trivia, a Business Manager mobile app, and an advertising network that sells those venue screens as connected-TV and digital-out-of-home inventory.
+Atmosphere (Atmosphere TV) is an Austin, Texas streaming television platform built for businesses rather than households. Spun out of Chive Media Group (theCHIVE) in 2019, it delivers free, ad-supported, audio-optional short-form channels - CHIVE TV, Atmosphere Sports, Happy TV, Nostalgia TV and partner channels - to bars, restaurants, gyms and health clubs, hotels, airports, medical waiting rooms, salons, casinos and other out-of-home venues over a streaming player and Android TV app. Alongside the channel lineup it sells a digital-signage product for venue-owned promotions, Atmosphere Trivia for in-venue engagement, a Business Manager mobile app for controlling screens, and an advertising network that monetizes those venue screens as connected-TV and digital-out-of-home inventory. Atmosphere raised a $65M Series D in February 2023 at a $1B valuation led by Sageview Capital with Valor Equity Partners and S3 Ventures. Atmosphere publishes no public developer API, SDK, or machine-readable API contract; api.atmosphere.tv is an undocumented first-party backend serving its own apps and venue console, and its shares trade on the private secondary market.
 
-- Website: https://www.atmosphere.tv/
-- Help centre: https://help.atmosphere.tv/
-- Venue console: https://admin.atmosphere.tv/
-- Advertising: https://advertise.atmosphere.tv/
-- Secondary-market listing: https://forgeglobal.com/atmosphere_stock/
+**Areas:** Company · Media · Streaming · Television · Advertising · Digital Signage · Out-of-Home · Entertainment · Hospitality · Connected TV
 
-## API surface
+## Atmosphere on APIs.io
 
-Atmosphere publishes **no public developer API**. Contract discovery on 2026-08-02 probed
-`www.`, `api.`, `help.`, `admin.` and `advertise.atmosphere.tv` for OpenAPI, Swagger, GraphQL,
-MCP, AsyncAPI and A2A surfaces; every path returned 404 (see
-`conformance/atmosphere-conformance.yml` and `well-known/atmosphere-well-known.yml`).
-`api.atmosphere.tv` is a live but undocumented first-party backend for Atmosphere's own apps
-and venue console.
+Everything profiled for Atmosphere is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/atmosphere/](https://apis.io/providers/atmosphere/)** — or go straight to one of the APIs or properties below.
 
-## Artifacts
+### Published properties
 
-| Artifact | File |
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Atmosphere Domain Security](https://apis.io/security/atmosphere/atmosphere-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.atmosphere.tv/)
+- [Getting started](https://help.atmosphere.tv/getting-started)
+- [Sign up](https://www.atmosphere.tv/signup)
+- [Support](https://help.atmosphere.tv/)
+- [Blog](https://www.atmosphere.tv/blogs)
+- [Terms of service](https://www.atmosphere.tv/legal/terms/business)
+- [Privacy policy](https://www.atmosphere.tv/legal/privacy)
+
+## API Evangelist rating
+
+**Kin Score 21.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
 |---|---|
-| Product changelog | `changelog/atmosphere-changelog.yml` |
-| Conformance | `conformance/atmosphere-conformance.yml` |
-| Well-known probe | `well-known/atmosphere-well-known.yml` |
-| Domain security | `security/atmosphere-domain-security.yml` |
-| llms.txt | `llms/atmosphere-llms.txt` |
+| Discoverability | 56.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 34.2 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 18.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/atmosphere/](https://apis.io/providers/atmosphere/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Atmosphere: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/atmosphere/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
